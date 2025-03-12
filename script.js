@@ -5,14 +5,13 @@ const label = document.querySelector("label");
 const img = document.querySelector("img");
 const btn = document.querySelector("button");
 const imgW = document.querySelector(".img-wrapper");
-const loadingText = document.createElement("p");
+const loader = document.createElement("div");
 
 let sound = new Audio("errorSound.mp3");
 console.log(sound);
 
-loadingText.textContent = "Loading...";
-loadingText.style.color = "gray";
-loadingText.style.margin = "10px 0";
+loader.classList.add("loader");
+loader.style.margin = "10px 0";
 
 const add = () => {
   label.classList.add("toggle");
@@ -22,14 +21,14 @@ const add = () => {
 const qrGen = () => {
   if (input.value !== "") {
     imgW.style.display = "block";
-    imgW.appendChild(loadingText);
+    imgW.appendChild(loader);
 
     img.src =
       `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=` +
       encodeURIComponent(input.value);
 
     img.onload = () => {
-      loadingText.textContent = "";
+      loader.style.display = "none";
     };
   } else {
     sound.play();

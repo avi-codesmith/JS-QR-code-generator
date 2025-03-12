@@ -101,3 +101,22 @@ button:active {
     transform: translateX(10px);
   }
 }
+
+.loader {
+  height: 64px;
+  width: 64px;
+  background-color: transparent;
+  border: 3px solid #eee;
+  border-radius: 50%;
+  border-top-color: royalblue;
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
