@@ -25,9 +25,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 0 20px 0 20px;
 }
 
-h1 {
+h4 {
   color: royalblue;
   text-align: center;
   font-size: 32px;
@@ -47,6 +48,7 @@ label {
   padding: 0 5px 0 5px;
   transition: top 0.3s ease;
   cursor: text;
+  z-index: 9999;
 }
 
 .toggle {
@@ -88,4 +90,14 @@ button:active {
 .img-wrapper {
   margin-top: 24px;
   display: none;
+}
+
+.move {
+  animation: move 0.1s infinite;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(10px);
+  }
 }

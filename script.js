@@ -7,6 +7,9 @@ const btn = document.querySelector("button");
 const imgW = document.querySelector(".img-wrapper");
 const loadingText = document.createElement("p");
 
+let sound = new Audio("errorSound.mp3");
+console.log(sound);
+
 loadingText.textContent = "Loading...";
 loadingText.style.color = "gray";
 loadingText.style.margin = "10px 0";
@@ -29,7 +32,17 @@ const qrGen = () => {
       loadingText.textContent = "";
     };
   } else {
-    alert("Enter text or URL");
+    sound.play();
+
+    input.classList.add("move");
+    setTimeout(() => {
+      input.classList.remove("move");
+    }, 200);
+
+    label.classList.add("move");
+    setTimeout(() => {
+      label.classList.remove("move");
+    }, 200);
   }
 };
 
