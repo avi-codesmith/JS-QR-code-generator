@@ -3,22 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS QR code Generator</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>
+      Best Free QR Code Generator | Instant Text & URL QR Code Maker
+    </title>
+    <meta
+      name="description"
+      content="Create free QR codes instantly using our online QR Code Generator. Supports text, URLs, and more. Fast, reliable & easy to use!"
+    />
+    <meta
+      name="keywords"
+      content="QR Code Generator, Free QR Code, Online QR Maker, QR Code Tool, URL QR Code, Text to QR, Generate QR Code Online"
+    />
+    <meta name="author" content="YourBrand or YourName" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://yourdomain.com/qr-code-generator" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://yourdomain.com/qr-code-generator"
+    />
+    <meta
+      property="og:title"
+      content="Free Online QR Code Generator | Generate QR Codes Fast"
+    />
+    <meta
+      property="og:description"
+      content="Make QR codes online for free. Enter text or a link and generate a high-quality QR code instantly."
+    />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/preview.png"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://yourdomain.com/qr-code-generator"
+    />
+    <meta
+      name="twitter:title"
+      content="Free Online QR Code Generator | Generate QR Codes Fast"
+    />
+    <meta
+      name="twitter:description"
+      content="Make QR codes online for free. Enter text or a link and generate a high-quality QR code instantly."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourdomain.com/images/preview.png"
+    />
+
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <header>
+      <nav>
+        <div class="main-logo-wrapper">
+          <img
+            class="main-logo"
+            alt="logo"
+            src="Blue and Orange Circle Icon Business Logo.png"
+          />
+        </div>
+        <ul>
+          <li>section-1</li>
+          <li>section-2</li>
+          <li>section-3</li>
+          <li>section-4</li>
+        </ul>
+      </nav>
+    </header>
     <div class="container">
-      <div class="generator">
-        <h4>QR Code Generator</h4>
-        <div class="relative">
-          <label for="input">Enter text or URL</label>
-          <input type="text" name="input" />
+      <main>
+        <div class="generator">
+          <div class="main">
+            <!-- <h4>QR Code Generator</h4> -->
+            <div class="relative">
+              <label for="input">Enter text or URL</label>
+              <input type="text" name="input" />
+            </div>
+            <button>Generate QR Code</button>
+          </div>
+          <div class="right-wrapper">
+            <div class="img-wrapper">
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=`
+              + encodeURIComponent(qr-codegenerator) +
+              `&color=4169e1&bgcolor=ffffff`"
+                alt="QR-code-image"
+                class="img"
+              />
+            </div>
+            <div class="icon-wrapper">
+              <div class="logo-wrapper">
+                <svg
+                  class="logo"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+              </div>
+              <div class="logo-wrapper">
+                <svg
+                  class="logo"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="img-wrapper">
-          <img src="" />
-        </div>
-        <button>Generate QR Code</button>
-      </div>
+      </main>
     </div>
   </body>
   <script src="script.js" defer></script>
