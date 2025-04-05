@@ -1,5 +1,4 @@
 # About
 ## This is a JS QR Code Generator
 ## [Generate Now!](https://qr-code-generator-in-js.netlify.app/)
-![QR-code](https://github.com/user-attachments/assets/3a5e7f5f-ea03-4f0a-946f-409a5fccf36e)
-
+![qr-code generator](https://github.com/user-attachments/assets/a3540f48-6a65-46ab-b614-bde6a81e57f1)
