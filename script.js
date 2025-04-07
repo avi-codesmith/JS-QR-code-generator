@@ -5,15 +5,20 @@ const label = document.querySelector("label");
 const img = document.querySelector("img");
 const btn = document.querySelector("button");
 const imgW = document.querySelector(".img-wrapper");
+
 const loader = document.createElement("div");
-const isValidDomain = (url) => {
-  return /\.(com|in|app|uk|org|net|info|co|io|gov|edu|me|xyz)$/i.test(url);
-};
+loader.classList.add("loader");
+loader.style.margin = "10px 0";
+
+// ✅ Select already existing buttons
+const downloadBtn = document.querySelector(".download");
+const copyBtn = document.querySelector(".copy");
 
 let sound = new Audio("errorSound.mp3");
 
-loader.classList.add("loader");
-loader.style.margin = "10px 0";
+const isValidDomain = (url) => {
+  return /\.(com|in|app|uk|org|net|info|co|io|gov|edu|me|xyz)$/i.test(url);
+};
 
 const add = () => {
   label.classList.add("toggle");
@@ -32,7 +37,6 @@ const qrGen = () => {
       setTimeout(() => {
         input.classList.remove("move");
       }, 300);
-
       return;
     } else {
       label.textContent = "Enter text or URL";
@@ -41,9 +45,9 @@ const qrGen = () => {
     imgW.style.display = "block";
     imgW.appendChild(loader);
 
-    img.src =
-      `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=` +
-      encodeURIComponent(value);
+    img.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(
+      value
+    )}`;
 
     img.onload = () => {
       loader.style.display = "none";
@@ -59,6 +63,33 @@ const qrGen = () => {
     }, 300);
   }
 };
+
+copyBtn.addEventListener("click", () => {
+  if (img.src) {
+    navigator.clipboard.writeText(img.src);
+    const icon = copyBtn.querySelector(".copy");
+    const originalSVG = icon.outerHTML;
+    icon.outerHTML = `
+          <svg class="logo" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#fff" viewBox="0 0 24 24">
+            <path d="M20.285 6.709l-11.27 11.27-5.3-5.3 1.414-1.414 3.885 3.885 9.856-9.856z"/>
+          </svg>
+        `;
+    setTimeout(() => {
+      copyBtn.querySelector("svg").outerHTML = originalSVG;
+    }, 1500);
+  }
+});
+
+downloadBtn.addEventListener("click", () => {
+  if (img.src) {
+    const a = document.createElement("a");
+    a.href = img.src;
+    a.download = "qr-code.png";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+});
 
 input.addEventListener("click", add);
 label.addEventListener("click", add);
